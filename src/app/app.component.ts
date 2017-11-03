@@ -11,4 +11,9 @@ export class AppComponent {
     console.log(e)
   }
 
+  onPostStatus(post) {
+    console.log('Post ID: ', post.id)
+    console.log('Post Status: ', post.added)
+  }
+
 }

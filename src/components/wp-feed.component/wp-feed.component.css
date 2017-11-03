@@ -1,0 +1,80 @@
+.post-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 10px auto;
+  position: relative;
+  padding: 15px;
+  box-shadow: 0px 0px 4px #9e9e9e;
+}
+
+.post-container article {
+  display: flex;
+}
+
+.post-container article img {
+  flex: 1;
+}
+
+.post-container article
+p {
+  flex: 3;
+  margin: 10px;
+  font-family: Roboto;
+  color: #666;
+}
+
+.post-container article p span {
+  color: gray;
+  font-style: italic;
+  font-size: 13px;
+  display: block;
+}
+
+.post-container article
+button {
+  flex: 1;
+  cursor: pointer;
+  margin: 5% 10px;
+  border: none;
+  background: gainsboro;
+}
+
+.post-container article
+button:hover {
+  background: gray;
+  color: white;
+}
+
+.posts-loader {
+  text-align: center;
+  font-size: 25px;
+  font-family: Roboto;
+  color: dimgrey;
+  animation: pulse 1s ease infinite alternate;
+}
+
+.loadMore-btn {
+  font-size: 25px;
+  font-family: Roboto;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  max-width: 1000px;
+  background: gainsboro;
+  margin: 40px auto;
+  position: relative;
+  display: block;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    color: dimgrey;
+  }
+
+  50% {
+    color: #c5c5c5;
+  }
+}

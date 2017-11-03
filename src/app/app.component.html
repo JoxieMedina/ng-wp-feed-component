@@ -1,1 +1,4 @@
-<wp-feed (feedLoadStatus)="onFeedLoad($event)" [wpEndpoint]="'http://www.45tvhn.com/api/'"></wp-feed>
+
+<wp-feed (postStatus)="onPostStatus($event)" [pageNumber]="1" (feedLoadStatus)="onFeedLoad($event)" [wpEndpoint]="'http://www.45tvhn.com/api/'"></wp-feed>
+
+

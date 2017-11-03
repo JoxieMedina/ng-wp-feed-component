@@ -1,2 +1,14 @@
 <ng-content></ng-content>
-<p>Hola desde wp feed component {{wpEndpoint}} </p>
+<section class="post-container" *ngFor="let post of wpPosts">
+  <article>
+    <img [src]="post?.attachments[0]?.images?.thumbnail?.url || 'http://via.placeholder.com/150x150?text=Sin Imagen'" alt="Image">
+    <p>{{post.title}}
+      <span>Publicado el {{post.date| date:'dd/MM/yyyy - hh:mm:ss a'}}</span>
+    </p>
+    <button (click)="togglePost(post)">{{post.showContent?'Ocultar':'Mostrar'}} contenido</button>
+    <button (click)="viewPost(post)">{{post.added?'No agregar':'Agregar'}} Post</button>
+  </article>
+  <div *ngIf="post.showContent" [innerHTML]="sanitizeContent(post.content)"></div>
+</section>
+<p class="posts-loader" *ngIf="loading">Cargando posts...</p>
+<button  class="loadMore-btn" *ngIf="!loading&&pageNumber<maxPageNumber" (click)="fetchMore()">Cargar más posts</button>
